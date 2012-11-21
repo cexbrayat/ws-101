@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Web services</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+	</head>
+
+	<body class="container-fluid">
+		<h1>Votes</h1>
+		<div class="row-fluid span12">
+			<h2 class="span4">5</h2><h2 class="span4" id="vote5"></h2> <div class="btn span4" id="up5">+1</div>
+		</div>
+		<div class="row-fluid span12">
+			<h2 class="span4">4</h2><h2 class="span4" id="vote4"></h2> <div class="btn span4" id="up4">+1</div>
+		</div>
+		<div class="row-fluid span12">
+			<h2 class="span4">3</h2><h2 class="span4" id="vote3"></h2> <div class="btn span4" id="up3">+1</div>
+		</div>
+		<div class="row-fluid span12">
+			<h2 class="span4">2</h2><h2 class="span4" id="vote2"></h2> <div class="btn span4" id="up2">+1</div>
+		</div>
+		<div class="row-fluid span12">
+			<h2 class="span4">1</h2><h2 class="span4" id="vote1"></h2> <div class="btn span4" id="up1">+1</div>
+		</div>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script>
+		  var socket = io.connect('http://192.168.1.6:9003');
+		  $('#up5').click(function(){
+		  	socket.emit('vote', {vote : 5 })	
+		  });
+		  $('#up4').click(function(){
+		  	socket.emit('vote', {vote : 4 })	
+		  });
+		  $('#up3').click(function(){
+		  	socket.emit('vote', {vote : 3 })	
+		  });
+		  $('#up2').click(function(){
+		  	socket.emit('vote', {vote : 2 })	
+		  });
+		  $('#up1').click(function(){
+		  	socket.emit('vote', {vote : 1 })	
+		  });
+		  socket.on('votes', function(msg){
+		  	var votes = msg.votes;
+		  	console.log(votes);
+		  	for(i = 0; i < 5; i++){
+		  	  $('#vote'+(i+1)).html(votes[i]);	
+		  	}
+		  });
+		</script>
+	</body>
+</html>
