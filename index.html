@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Web services</title>
+
+		<meta name="author" content="Cédric Exbrayat">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/custom.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>WEB SERVICES</h1>
+				</section>
+
+				<section>
+					<h2>Cedric Exbrayat</h2>
+					<br/>
+					<h4>@cedric_exbrayat</h4>
+					<br/>
+					<h4>ninjasquad</h4>
+				</section>
+
+				<section>
+					<h3>A quoi sert un</h3>
+					<h1>Web service?</h1>
+				</section>
+
+				<section>
+					<h2>Echange de données</h2>
+					<h4>entre deux applications</h4>
+					<h2>par réseau</h2>
+				</section>
+				
+				<section>
+					<h2>Echange de données</h2>
+					<h4>entre deux devices</h4>
+					<h2>par réseau</h2>
+				</section>
+
+				<section>
+					<h2>2 protocoles</h2>
+				</section>
+
+				<section>
+					<h1>SOAP</h1>
+					<h1>REST</h1>
+				</section>
+
+				<section data-state="bg2">
+					<h1>SOAP</h1>
+				</section>
+
+				<section data-state="bg2">
+					<h2>Simple</h2>
+					<h2>Object</h2>
+					<h2>Access</h2>
+					<h2>Protocol</h2>
+				</section>
+
+				<section data-state="bg2">
+					<h2 style="text-decoration: line-through">Simple</h2>
+					<h2>Complex</h2>
+				</section>
+
+				<section data-state="bg2">
+					<h2 style="text-decoration: line-through">Object</h2>
+					<h2>RPC</h2>
+				</section>
+
+				<section data-state="bg2">
+					<h1 style="text-decoration: line-through">SOAP</h1>
+					<h1>CRAP</h1>
+				</section>
+
+				<section data-state="bg2">
+					<h2 style="text-transform: none">1998 - Microsoft</h2>
+				</section>
+
+				<section data-state="bg2">
+					<h2 style="text-transform: none">HTTP/S et SMTP</h2>
+				</section>
+
+				<section data-state="bg2">
+					<h4 style="text-transform: none">Format du message</h4>
+					<pre><code  class="xml">
+&lt;envelope>
+	&lt;headers&gt;&lt;/headers&gt;
+	&lt;body&gt;&lt;/body&gt;
+&lt;/envelope&gt;
+					</code></pre>
+				</section>
+
+				<section data-state="bg2">
+					<h3 style="text-transform: none">XML</h3>
+					<h4>repandu en entreprise et open source</h4>
+					<h4>simple a lire</h4>
+				</section>
+
+				<section data-state="bg2">
+					<h4 style="text-transform: none">Requête</h4>
+					<pre><code  class="xml">
+&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"&gt;
+  &lt;soap:Header&gt;
+  &lt;/soap:Header&gt;
+  &lt;soap:Body&gt;
+    &lt;m:GetStockPrice xmlns:m="http://www.example.org/stock"&gt;
+      &lt;m:StockName&gt;IBM&lt;/m:StockName&gt;
+    &lt;/m:GetStockPrice&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+					</code></pre>
+				</section>
+
+				<section data-state="bg2">
+					<h4 style="text-transform: none">Réponse</h4>
+					<pre><code  class="xml">
+&lt;soap:Envelope xmlns:soap="http://www.w3.org/2001/12/soap-envelope"&gt;
+  &lt;soap:Body xmlns:m="http://www.example.org/stock"&gt;
+    &lt;m:GetStockPriceResponse&gt;
+      &lt;m:Price&gt;34.5&lt;/m:Price&gt;
+    &lt;/m:GetStockPriceResponse&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+					</code></pre>
+				</section>
+				
+				<section data-state="bg2">
+					<h2 style="text-transform: none">WSDL</h2>
+					<h2><a href="http://developer.ebay.com/webservices/latest/ShoppingService.wsdl">ebay</a></h2>
+					<h2><a href="http://ecs.amazonaws.com/AWSECommerceService/2007-10-29/AWSECommerceService.wsdl">amazon</a></h2>
+				</section>
+
+				<section data-state="bg2">
+					<h2 style="text-transform: none">SoapFault</h2>
+				</section>
+
+				<section data-state="bg2">
+					<h2 style="text-transform: none">DEMO SOAPUI</h2>
+				</section>				
+
+				<section data-state="bg2">
+					<h2 style="text-transform: none">+++</h2>
+					<h3>Generation automatique</h3>
+					<h3>Contrat fixe</h3>
+					<h3>Outils</h3>
+				</section>
+
+				<section data-state="bg2">
+					<h2 style="text-transform: none">---</h2>
+					<h3>verbeux</h3>
+					<h3>lent</h3>
+					<h3>contraignant</h3>
+				</section>
+				
+				<section>
+					<h1>REST</h1>
+				</section>
+
+				<section>
+					<h2>Representational State Transfer</h2>
+				</section>
+
+				<section>
+					<h2>2000 - Roy Fielding</h2>
+				</section>
+
+				<section>
+					<h2>Stateless</h2>
+				</section>
+
+				<section>
+					<h2>JSON ou XML</h2>
+				</section>
+
+				<section>
+					<pre><code  class="json">
+{
+  "name": "Cédric Exbrayat",
+  "company": "Ninja Squad",
+  "email": "cedric@ninja-squad.com",
+  "twitter": "cexbrayat",
+  "assocs" : ["JUG", "Mixit"]
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Respect du web</h2>
+				</section>
+
+				<section>
+					<h2>URI</h2>
+					<h3>http://ninja-squad.com/users/cexbrayat</h3>
+				</section>
+
+				<section>
+					<h2>HTTP verb</h2>
+				</section>
+
+				<section>
+					<h2>GET - POST - PUT - DELETE</h2>
+				</section>
+
+				<section>
+					<h2><strike>getAllUsers</strike></h2>
+				</section>
+
+				<section>
+					<h2>GET /users</h2>
+				</section>
+
+				<section>
+					<h2><strike>getUserById(id)</strike></h2>
+				</section>
+
+				<section>
+					<h2>GET /users/{id}</h2>
+				</section>
+
+				<section>
+					<h2><strike>createUser</strike></h2>
+				</section>
+
+				<section>
+					<h2>POST /users</h2>
+					<pre><code  class="json">
+{
+  "name": "Cédric Exbrayat",
+  "company": "Ninja Squad",
+  "email": "cedric@ninja-squad.com",
+  "twitter": "cexbrayat",
+  "assocs" : ["JUG", "Mixit"]
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2><strike>deleteUser(id)</strike></h2>
+				</section>
+
+				<section>
+					<h2>DELETE /users/{id}</h2>
+				</section>
+
+				<section>
+					<h2><strike>updateUser</strike></h2>
+				</section>
+
+				<section>
+					<h2>PUT /users/{id}</h2>
+				</section>
+
+				<section>
+					<h2><strike>searchUser</strike></h2>
+				</section>
+
+				<section>
+					<h2>Code http</h2>
+					<h4>3 cas courants</h4>
+					<h4>OK, erreur client, erreur serveur</h4>
+				</section>
+
+				<section>
+					<h2>OK</h2>
+				</section>
+
+				<section>
+					<img src="http://farm8.staticflickr.com/7153/6512628175_05188fffdf_o.jpg"></img>
+				</section>
+
+				<section>
+					<h2>Bad request</h2>
+				</section>
+
+				<section>
+					<img src="http://farm8.staticflickr.com/7022/6540669737_efcd99ea88_o.jpg"></img>
+				</section>
+
+				<section>
+					<h2>Internal Server Error</h2>
+				</section>
+
+				<section>
+					<img src="http://farm8.staticflickr.com/7001/6509400855_f36a7fea54_o.jpg"></img>
+				</section>
+
+				<section>
+					<h2>Created</h2>
+				</section>
+
+				<section>
+					<img src="http://farm8.staticflickr.com/7149/6540221577_a8a555ce53_o.jpg"></img>
+				</section>
+				
+				<section>
+					<h2>Not Modified</h2>
+				</section>
+
+				<section>
+					<img src="http://farm8.staticflickr.com/7166/6540551929_4053d64e49_o.jpg"></img>
+				</section>
+
+				<section>
+					<h2>Not Found</h2>
+				</section>
+				
+				<section>
+					<img src="http://farm8.staticflickr.com/7172/6508022985_b7862b580a_o.jpg"></img>
+				</section>
+				
+				<section>
+					<h2>I'm a teapot</h2>
+				</section>
+				
+				<section>
+					<img src="http://farm8.staticflickr.com/7006/6508102407_4daeef6529_o.jpg"></img>
+				</section>
+				
+				<section>
+					<h2>Reponse</h2>
+				</section>
+
+				<section>
+					<h2>HTTP status 404</h2>
+					<pre><code  class="json">
+{
+	"code": "14",
+	"developerMessage": "this user has not enough credentials to access admin repository",
+	"more": "http://mywebsite.com/api/errors/14",
+	"userMessage": "You can't access this repository",
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Content type negociation</h2>
+					<h4>application/json</h4>
+					<h4>application/xml</h4>
+				</section>
+
+				<section>
+					<h2>HATEOAS</h2>
+					<h4>Hypermedia as the Engine</h4>
+					<h4>of Application State</h4>
+				</section>
+
+				<section>
+					<h2>Demo</h2>
+					<h3><a href="https://apigee.com/console/github">github</a></h3>
+				</section>
+
+				<section>
+					<h3>Pragmatist</h3>
+					<h4> vs </h4>
+					<h3>RESTafarian</h3>
+				</section>
+
+				<section>
+					<h2>Api sub domain</h2>
+					<h4>http://api.github.com</h4>
+				</section>
+
+				<section>
+					<h2>Verbs are bad</h2>
+					<h2>Nouns are good</h2>
+				</section>
+
+				<section>
+					<h3>noms concrets</h3>
+					<h3>lower case</h3>
+					<h3>pluriel</h3>
+				</section>
+
+				<section>
+					<h2>Eviter</h2>
+					<h3>/items</h3>
+					<h3>/Product</h3>
+				</section>
+
+				<section>
+					<h2>Attributs names</h2>
+					<h4>"created_at": Twitter, Github</h4>
+					<h4>"createdAt": Foursquare</h4>
+				</section>
+
+				<section>
+					<h2>Versionning</h2>
+					<h4>/v1/users</h4>
+				</section>
+
+				<section>
+					<h2>Pagination</h2>
+					<h4>/users?limit=120</h4>
+					<h4>/users?page=2&count=30</h4>
+					<h4>/users?fields=name,email</h4>
+				</section>
+
+				<section>
+					<h2>Pas de ressources?</h2>
+					<h4>/shares/goog/convert?from=USD&to=EUR</h4>
+				</section>
+
+				<section>
+					<h2>Authentification</h2>
+					<h4>OAuth2</h4>
+				</section>
+
+				<section data-state="bg2">
+					<h1>Websocket</h1>
+				</section>
+
+				<section data-state="bg2">
+					<h2>Temps réel</h2>
+				</section>
+
+				<section data-state="bg2">
+					<h2>Bi directionnel</h2>
+				</section>
+
+				<section data-state="bg2">
+					<h3>handshake -> http</h2>
+					<h3>communication -> tcp</h3>
+				</section>
+
+				<section data-state="bg2">
+					<h3>Firefox6</h3>
+					<h3>Chrome14</h3>
+					<h3>IE10</h3>
+				</section>				
+
+				<section data-state="bg2">
+					<h2>Fallback</h2>
+				</section>
+
+				<section data-state="bg2">
+					<h2>Demo</h2>
+				</section>	
+
+				<section data-state="bg2">
+					<h2>Merci</h2>
+					<h4>http://github.com/cexbrayat/ws-101</h4>
+				</section>							
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+	</body>
+</html>

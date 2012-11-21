@@ -1,0 +1,62 @@
+/**
+ * Default theme for reveal.js.
+ * 
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800);
+
+// Override theme settings (see ../template/settings.scss)
+
+// Background generator
+@mixin bodyBackground() {
+	@include radial-gradient( #465457, #465457 );
+}
+
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.reveal {
+	h1, h2, h3, h4, h5 {
+		font-family: "League Gothic", "Open Sans", Impact, sans-serif;
+	}
+	h1, h4, h5 {
+		color: #CDF029;
+	}
+	h2, h3 {
+		color: #EDE0CF;
+	}
+	section {
+		margin-top: 100px;
+	}
+}
+
+.bg2 .reveal {
+	h1, h2, h3, h4, h5 {
+		font-family: "League Gothic", "Open Sans", Impact, sans-serif;
+	}
+	h1, h4, h5 {
+		color: #EF5150;
+	}
+	h2, h3 {
+		color: #EDE0CF;
+	}
+	section {
+		margin-top: 100px;
+	}
+	.state-background {
+		background-color: #4C4C4C;
+	}
+}
