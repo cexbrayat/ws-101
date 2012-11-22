@@ -1,4 +1,4 @@
-Slides are in index.html (and needs all the stuff incuded for revealjs).
+Slides are in index.html (and needs all the stuff included for [revealjs](http://lab.hakim.se/reveal-js/)).
 
 Websocket demo in server/
 To launch, install node and npm
